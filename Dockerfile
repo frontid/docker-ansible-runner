@@ -1,14 +1,14 @@
 FROM alpine
 
-RUN echo "http://dl-cdn.alpinelinux.org/alpine/v3.4/community" >> /etc/apk/repositories; echo "http://dl-cdn.alpinelinux.org/alpine/v3.4/main" >> /etc/apk/repositories
+RUN echo "http://dl-cdn.alpinelinux.org/alpine/latest-stable/community" >> /etc/apk/repositories; echo "http://dl-cdn.alpinelinux.org/alpine/latest-stable/main" >> /etc/apk/repositories
 
 # Bash terminal
 RUN apk add --update bash && rm -rf /var/cache/apk/*
 
 RUN \
   apk --update add \
-  python \
-  python-dev \
+  python3 \
+  python3-dev \
   py-pip \
   build-base \
   ansible \
